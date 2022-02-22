@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>General &mdash; Ivy 1.0 documentation</title>
+  <title>less_equal &mdash; Ivy 1.0 documentation</title>
   
 
   
@@ -182,13 +182,13 @@
     
       <li><a href="../../../../index.html">Docs</a> &raquo;</li>
         
-      <li>General</li>
+      <li>less_equal</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../../_sources/functional/backends/tensorflow/core/general.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/functional/ivy/core/general/less_equal.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -201,53 +201,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="general">
-<h1>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">General</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="general/array.html">array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/is_array.html">is_array</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/dtype_bits.html">dtype_bits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/abs.html">abs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/argmax.html">argmax</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/argmin.html">argmin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/cast.html">cast</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/arange.html">arange</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/linspace.html">linspace</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/logspace.html">logspace</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/concatenate.html">concatenate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/flip.html">flip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/unstack.html">unstack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/split.html">split</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/tile.html">tile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/constant_pad.html">constant_pad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/zero_pad.html">zero_pad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/swapaxes.html">swapaxes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/isnan.html">isnan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/isinf.html">isinf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/squeeze.html">squeeze</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/zeros.html">zeros</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/zeros_like.html">zeros_like</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/full.html">full</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/ones.html">ones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/ones_like.html">ones_like</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/one_hot.html">one_hot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/matmul.html">matmul</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/identity.html">identity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/scatter_flat.html">scatter_flat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/scatter_nd.html">scatter_nd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/gather.html">gather</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/gather_nd.html">gather_nd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/linear_resample.html">linear_resample</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/dtype.html">dtype</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/dtype_to_str.html">dtype_to_str</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/dtype_from_str.html">dtype_from_str</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/inplace_update.html">inplace_update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/inplace_decrement.html">inplace_decrement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general/inplace_increment.html">inplace_increment</a></li>
+  <div class="section" id="less-equal">
+<h1>less_equal<a class="headerlink" href="#less-equal" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="ivy.functional.ivy.core.general.less_equal">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">less_equal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x1</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">x2</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/functional/ivy/core/general.html#less_equal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.core.general.less_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the truth value of x1_i &lt;= x2_i for each element x1_i of the input array x1 with the respective
+element x2_i of the input array x2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> – first input array. May have any data type.</p></li>
+<li><p><strong>x2</strong> – second input array. Must be compatible with x1 (with Broadcasting). May have any data type.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an array containing the element-wise results. The returned array must have a data type of bool.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Supported Frameworks:</strong></div>
 </div>
+<p><a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://jax.readthedocs.io"><img alt="jax_logo" src="../../../../_images/jax_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://www.tensorflow.org"><img alt="tf_logo" src="../../../../_images/tensorflow_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://pytorch.org"><img alt="pytorch_logo" src="../../../../_images/pytorch_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://mxnet.apache.org"><img alt="mxnet_logo" src="../../../../_images/mxnet_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://numpy.org"><img alt="numpy_logo" src="../../../../_images/numpy_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a></p>
 </div>
 
 
