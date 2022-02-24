@@ -13,4 +13,6 @@ Elementwise functions
    :caption: Elementwise functions
 
    elementwise_functions/isfinite.rst
+   elementwise_functions/equal.rst
+   elementwise_functions/less_equal.rst
 
