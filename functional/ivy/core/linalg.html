@@ -106,15 +106,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../backends.html">Backends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ivy.html">Ivy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Graph compiler</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../graph_compiler/compiler.html">Compiler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../graph_compiler/globals.html">Globals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../graph_compiler/graph.html">Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../graph_compiler/helpers.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../graph_compiler/op_logging.html">Op logging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../graph_compiler/param.html">Param</a></li>
-</ul>
 <p class="caption"><span class="caption-text">Stateful</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
@@ -270,50 +261,29 @@ Default is False.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="ivy.functional.ivy.core.linalg.svd">
-<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">svd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/core/linalg.html#svd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.core.linalg.svd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Singular Value Decomposition.
-When x is a 2D array, it is factorized as u &#64; numpy.diag(s) &#64; vh = (u * s) &#64; vh, where u and vh are 2D unitary
-arrays and s is a 1D array of a’s singular values. When x is higher-dimensional, SVD is applied in batched mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>array</em>) – Input array with number of dimensions &gt;= 2.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p>u -&gt; { (…, M, M), (…, M, K) } array</p>
-<p>Unitary array(s). The first (number of dims - 2) dimensions have the same size as those of the input a.
-The size of the last two dimensions depends on the value of full_matrices.</p>
-<p>s -&gt; (…, K) array</p>
-<p>Vector(s) with the singular values, within each vector sorted in descending ord.
-The first (number of dims - 2) dimensions have the same size as those of the input a.</p>
-<p>vh -&gt; { (…, N, N), (…, K, N) } array</p>
-<p>Unitary array(s). The first (number of dims - 2) dimensions have the same size as those of the input a.
-The size of the last two dimensions depends on the value of full_matrices.</p>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="ivy.functional.ivy.core.linalg.vector_norm">
-<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">vector_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">p</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">keepdims</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/core/linalg.html#vector_norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.core.linalg.vector_norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the vector p-norm.</p>
+<dt id="ivy.functional.ivy.core.linalg.qr">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">qr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'reduced'</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/core/linalg.html#qr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.core.linalg.qr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the qr decomposition of the x matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>array</em>) – Input array.</p></li>
-<li><p><strong>p</strong> (<em>int</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – Order of the norm. Default is 2.</p></li>
-<li><p><strong>axis</strong> (<em>int</em><em> or </em><em>sequence of ints</em><em>, </em><em>optional</em>) – If axis is an integer, it specifies the axis of x along which to compute the vector norms.
-Default is None, in which case the flattened array is considered.</p></li>
-<li><p><strong>keepdims</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this is set to True, the axes which are normed over are left in the result as dimensions with
-size one. With this option the result will broadcast correctly against the original x.
-Default is False.</p></li>
+<li><p><strong>x</strong> (<em>array</em>) – Matrix to be decomposed.</p></li>
+<li><p><strong>mode</strong> (<em>str</em><em>, </em><em>optional</em>) – The option to choose between the full and reduced QR decomposition.</p></li>
+<li><p><strong>f</strong> (<em>ml_framework</em><em>, </em><em>optional</em>) – Machine learning framework. Inferred from inputs if None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Vector norm of the array at specified axes.</p>
+<dd class="field-even"><p>qr decomposition of the matrix x.</p>
 </dd>
 </dl>
+<p>If x has shape (<em>, M, N) and considering K = min(M, N).
+mode = ‘reduced’ (default): Returns (Q, R) of shapes (</em>, M, K), (<em>, K, N) respectively.
+mode = ‘complete’: Returns (Q, R) of shapes (</em>, M, M), (<em>, M, N) respectively.
+mode = ‘r’: Computes only the reduced R. Returns (Q, R) with Q empty and R of shape (</em>, K, N).</p>
+<p>Please note that different frameworks support different modes. For example: mode=’raw’
+is supported in numpy but not in pytorch. Similarly, tensorflow doesn’t support ‘r’ mode.
+The ‘reduced’ and ‘complete’ modes are sufficient for most of the use-cases and are supported
+by all the frameworks.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -335,13 +305,12 @@ Default is False.</p></li>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Linalg</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="linalg/svd.html">svd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="linalg/vector_norm.html">vector_norm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linalg/matrix_norm.html">matrix_norm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linalg/inv.html">inv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linalg/pinv.html">pinv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linalg/vector_to_skew_symmetric_matrix.html">vector_to_skew_symmetric_matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linalg/cholesky.html">cholesky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg/qr.html">qr</a></li>
 </ul>
 </div>
 </div>
